@@ -32,6 +32,7 @@
 #include <string>
 #include <time.h>
 #include <vector>
+#include <filesystem>
 
 /* miniz.c v1.15 - public domain deflate/inflate, zlib-subset, ZIP reading/writing/appending, PNG writing
    See "unlicense" statement at the end of this file.
