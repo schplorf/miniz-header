@@ -5361,12 +5361,22 @@ public:
     
     void extract(const std::string &member, const std::string &path)
     {
+        auto file = detail::join_path({ path, member.filename });
+        auto target = std::filesystem::path(file).parent_path();
+        if (!std::filesystem::exists(target)) {
+            std::filesystem::create_directories(target);
+        }
         std::fstream stream(detail::join_path({path, member}), std::ios::binary | std::ios::out);
         stream << open(member).rdbuf();
     }
 
     void extract(const zip_info &member, const std::string &path)
     {
+        auto file = detail::join_path({ path, member.filename });
+        auto target = std::filesystem::path(file).parent_path();
+        if (!std::filesystem::exists(target)) {
+            std::filesystem::create_directories(target);
+        }
         std::fstream stream(detail::join_path({path, member.filename}), std::ios::binary | std::ios::out);
         stream << open(member).rdbuf();
     }
