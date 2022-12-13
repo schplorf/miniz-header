@@ -4968,7 +4968,7 @@ void *mz_zip_extract_archive_file_to_heap(const char *pZip_filename, const char 
   For more information, please refer to <http://unlicense.org/>
 */
 
-namespace miniz_cpp {
+namespace mz{
 namespace detail {
 
 #ifdef _WIN32
@@ -5712,4 +5712,4 @@ private:
     std::string filename_;
 };
 
-} // namespace miniz_cpp
+} // namespace mz
